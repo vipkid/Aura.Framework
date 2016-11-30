@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text;
 
-namespace Aura.Framework.Connection.Messages
+namespace Aura.Framework.Shared.Messages
 {
     /// <summary>
     /// Represents a message that is received from the client.

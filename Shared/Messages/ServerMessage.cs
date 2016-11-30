@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Aura.Shared.Messages
+namespace Aura.Framework.Shared.Messages
 {
     /// <summary>
     /// Represents a message that is received from the server.

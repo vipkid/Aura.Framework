@@ -1,4 +1,4 @@
-﻿namespace Aura.Framework.Connection.Packets
+﻿namespace Aura.Framework.Shared.Packets
 {
     /// <summary>
     /// Provides packet-ids associated with the server.

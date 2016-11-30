@@ -1,4 +1,5 @@
 ﻿using Aura.Framework.Analystics;
+using Aura.Framework.Enumerators;
 using System;
 using System.Net;
 using System.ServiceProcess;
@@ -18,8 +19,13 @@ namespace Aura.Framework.Core
         /// </summary>
         public static bool Framework()
         {
-            // Class "ReflectionContext" exists from .NET 4.5 onwards.
-            return Type.GetType("System.Reflection.ReflectionContext", false) != null;
+            using (Logger logger = new Logger())
+            {
+                logger.Write(LoggerType.Internal, $"Checking .NET Framework...");
+
+                // Class "ReflectionContext" exists from .NET 4.5 onwards.
+                return Type.GetType("System.Reflection.ReflectionContext", false) != null;
+            }
         }
 
         /// <summary>
@@ -27,12 +33,16 @@ namespace Aura.Framework.Core
         /// </summary>
         public static async Task<string> GetIPAddress()
         {
-            Task<string> downloader = new Task<string>(() =>
+            using (Logger logger = new Logger())
             {
-                return new WebClient().DownloadString("https://api.ipify.org");
-            });
-            downloader.Start();
-            return await downloader;
+                Task<string> downloader = new Task<string>(() =>
+                {
+                    logger.Write(LoggerType.Internal, $"Downloading IPAddress...");
+                    return new WebClient().DownloadString("https://api.ipify.org");
+                });
+                downloader.Start();
+                return await downloader;
+            }
         }
 
         /// <summary>
@@ -40,26 +50,28 @@ namespace Aura.Framework.Core
         /// </summary>
         public static bool Service(string service)
         {
-            ServiceController controller = new ServiceController(service);
-            try
+            using (Logger logger = new Logger())
             {
-                switch (controller.Status)
+                ServiceController controller = new ServiceController(service);
+                try
                 {
-                    case ServiceControllerStatus.Running:
-                        return true;
+                    switch (controller.Status)
+                    {
+                        case ServiceControllerStatus.Running:
+                            logger.Write(LoggerType.Internal, $"The service '{service}' is running.");
+                            return true;
 
-                    default:
-                        return false;
+                        default:
+                            logger.Write(LoggerType.Internal, $"The service '{service}' is not running.");
+                            return false;
+                    }
                 }
-            }
-            catch (InvalidOperationException e)
-            {
-                using (Logger logger = new Logger())
+                catch (InvalidOperationException e)
                 {
-                    logger.WriteError(e);
+                    logger.Write(LoggerType.Exception, e);
                 }
+                return false;
             }
-            return false;
         }
 
         #endregion Public Static Methods

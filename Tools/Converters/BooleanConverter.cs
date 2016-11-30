@@ -1,11 +1,12 @@
 ﻿using Aura.Framework.Tools.Converters.Interfaces;
+using System;
 
 namespace Aura.Framework.Tools.Converters
 {
     /// <summary>
     /// A class that converts a <see cref="bool"/> value to an <see cref="int"/> value.
     /// </summary>
-    public class BooleanConverter : IConverter<int, bool>, IConverter<string, bool>, IConverter<long, bool>, System.IDisposable
+    public class BooleanConverter : IConverter<int, bool>, IConverter<string, bool>, IConverter<long, bool>, IDisposable
     {
         #region Methods
 
