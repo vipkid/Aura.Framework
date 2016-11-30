@@ -32,7 +32,7 @@ namespace Aura.Framework.Core
 
         #region Delegates
 
-        private delegate bool IsWow64ProcessDelegate([In] IntPtr handle, [Out] out bool isWow64Process);
+        private delegate bool _IsWow64ProcessDelegate([In] IntPtr handle, [Out] out bool _IsWow64Process);
 
         #endregion Delegates
 
@@ -41,7 +41,7 @@ namespace Aura.Framework.Core
         /// <summary>
         /// Determines if the current application is 32 or 64-bit.
         /// </summary>
-        static public SoftwareArchitecture ProgramBits
+        public static SoftwareArchitecture ProgramBits
         {
             get
             {
@@ -68,7 +68,7 @@ namespace Aura.Framework.Core
             }
         }
 
-        static public SoftwareArchitecture OSBits
+        public static SoftwareArchitecture OSBits
         {
             get
             {
@@ -81,7 +81,7 @@ namespace Aura.Framework.Core
                         break;
 
                     case 32:
-                        if (_Is32BitProcessOn64BitProcessor())
+                        if (Is32BitProcessOn64BitProcessor())
                             osbits = SoftwareArchitecture.Bit64;
                         else
                             osbits = SoftwareArchitecture.Bit32;
@@ -99,7 +99,7 @@ namespace Aura.Framework.Core
         /// <summary>
         /// Determines if the current processor is 32 or 64-bit.
         /// </summary>
-        static public ProcessorArchitecture ProcessorBits
+        public static ProcessorArchitecture ProcessorBits
         {
             get
             {
@@ -142,12 +142,12 @@ namespace Aura.Framework.Core
 
         #region Windows Edition
 
-        static private string _Edition;
+        private static string _Edition;
 
         /// <summary>
         /// Gets the edition of the operating system running on this computer.
         /// </summary>
-        static public string Edition
+        public static string Edition
         {
             get
             {
@@ -565,12 +565,12 @@ namespace Aura.Framework.Core
 
         #region Name
 
-        static private string _Name;
+        private static string _Name;
 
         /// <summary>
         /// Gets the name of the operating system running on this computer.
         /// </summary>
-        static public string Name
+        public static string Name
         {
             get
             {
@@ -596,14 +596,14 @@ namespace Aura.Framework.Core
 
                         // For applications that have been manifested for Windows 8.1 & Windows 10. Applications not manifested for 8.1 or 10 will return the Windows 8 OS version value (6.2).
                         // By reading the registry, we'll get the exact version - meaning we can even compare against  Win 8 and Win 8.1.
-                        string exactVersion = _RegistryRead(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentVersion", "");
+                        string exactVersion = RegistryRead(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentVersion", "");
                         if (!string.IsNullOrEmpty(exactVersion))
                         {
                             string[] splitResult = exactVersion.Split('.');
                             majorVersion = Convert.ToInt32(splitResult[0]);
                             minorVersion = Convert.ToInt32(splitResult[1]);
                         }
-                        if (_IsWindows10())
+                        if (IsWindows10())
                         {
                             majorVersion = 10;
                             minorVersion = 0;
@@ -984,7 +984,7 @@ namespace Aura.Framework.Core
         /// <summary>
         /// Gets the service pack information of the operating system running on this computer.
         /// </summary>
-        static public string ServicePack
+        public static string ServicePack
         {
             get
             {
@@ -1011,11 +1011,11 @@ namespace Aura.Framework.Core
         /// <summary>
         /// Gets the build version number of the operating system running on this computer.
         /// </summary>
-        static public int BuildVersion
+        public static int BuildVersion
         {
             get
             {
-                return int.Parse(_RegistryRead(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuildNumber", "0"));
+                return int.Parse(RegistryRead(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentBuildNumber", "0"));
             }
         }
 
@@ -1028,7 +1028,7 @@ namespace Aura.Framework.Core
         /// <summary>
         /// Gets the full version string of the operating system running on this computer.
         /// </summary>
-        static public string VersionString
+        public static string VersionString
         {
             get
             {
@@ -1043,7 +1043,7 @@ namespace Aura.Framework.Core
         /// <summary>
         /// Gets the full version of the operating system running on this computer.
         /// </summary>
-        static public Version Version
+        public static Version Version
         {
             get
             {
@@ -1060,15 +1060,15 @@ namespace Aura.Framework.Core
         /// <summary>
         /// Gets the major version number of the operating system running on this computer.
         /// </summary>
-        static public int MajorVersion
+        public static int MajorVersion
         {
             get
             {
-                if (_IsWindows10())
+                if (IsWindows10())
                 {
                     return 10;
                 }
-                string exactVersion = _RegistryRead(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentVersion", "");
+                string exactVersion = RegistryRead(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentVersion", "");
                 if (!string.IsNullOrEmpty(exactVersion))
                 {
                     string[] splitVersion = exactVersion.Split('.');
@@ -1085,15 +1085,15 @@ namespace Aura.Framework.Core
         /// <summary>
         /// Gets the minor version number of the operating system running on this computer.
         /// </summary>
-        static public int MinorVersion
+        public static int MinorVersion
         {
             get
             {
-                if (_IsWindows10())
+                if (IsWindows10())
                 {
                     return 0;
                 }
-                string exactVersion = _RegistryRead(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentVersion", "");
+                string exactVersion = RegistryRead(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "CurrentVersion", "");
                 if (!string.IsNullOrEmpty(exactVersion))
                 {
                     string[] splitVersion = exactVersion.Split('.');
@@ -1110,11 +1110,11 @@ namespace Aura.Framework.Core
         /// <summary>
         /// Gets the revision version number of the operating system running on this computer.
         /// </summary>
-        static public int RevisionVersion
+        public static int RevisionVersion
         {
             get
             {
-                if (_IsWindows10())
+                if (IsWindows10())
                 {
                     return 0;
                 }
@@ -1128,7 +1128,7 @@ namespace Aura.Framework.Core
 
         #region 64 Bit OS Detection
 
-        private static IsWow64ProcessDelegate _GetIsWow64ProcessDelegate()
+        private static _IsWow64ProcessDelegate GetIsWow64ProcessDelegate()
         {
             IntPtr handle = LoadLibrary("kernel32");
 
@@ -1138,16 +1138,16 @@ namespace Aura.Framework.Core
 
                 if (fnPtr != IntPtr.Zero)
                 {
-                    return (IsWow64ProcessDelegate)Marshal.GetDelegateForFunctionPointer((IntPtr)fnPtr, typeof(IsWow64ProcessDelegate));
+                    return (_IsWow64ProcessDelegate)Marshal.GetDelegateForFunctionPointer((IntPtr)fnPtr, typeof(_IsWow64ProcessDelegate));
                 }
             }
 
             return null;
         }
 
-        private static bool _Is32BitProcessOn64BitProcessor()
+        private static bool Is32BitProcessOn64BitProcessor()
         {
-            IsWow64ProcessDelegate fnDelegate = _GetIsWow64ProcessDelegate();
+            _IsWow64ProcessDelegate fnDelegate = GetIsWow64ProcessDelegate();
 
             if (fnDelegate == null)
             {
@@ -1165,13 +1165,13 @@ namespace Aura.Framework.Core
             return isWow64;
         }
 
-        #endregion 64 BIT OS DETECTION
+        #endregion 64 Bit OS Detection
 
         #region Windows 10 Detection
 
-        private static bool _IsWindows10()
+        private static bool IsWindows10()
         {
-            string productName = _RegistryRead(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ProductName", "");
+            string productName = RegistryRead(@"HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion", "ProductName", "");
             if (productName.StartsWith("Windows 10", StringComparison.OrdinalIgnoreCase))
             {
                 return true;
@@ -1183,7 +1183,7 @@ namespace Aura.Framework.Core
 
         #region Registry Methods
 
-        private static string _RegistryRead(string RegistryPath, string Field, string DefaultValue)
+        private static string RegistryRead(string registryPath, string field, string defaultValue)
         {
             string rtn = "";
             string backSlash = "";
@@ -1192,7 +1192,7 @@ namespace Aura.Framework.Core
             try
             {
                 RegistryKey OurKey = null;
-                string[] split_result = RegistryPath.Split('\\');
+                string[] split_result = registryPath.Split('\\');
 
                 if (split_result.Length > 0)
                 {
@@ -1217,7 +1217,7 @@ namespace Aura.Framework.Core
                             //rtn = (string)Registry.GetValue(RegistryPath, "CurrentVersion", DefaultValue);
 
                             OurKey = OurKey.OpenSubKey(newRegistryPath);
-                            rtn = (string)OurKey.GetValue(Field, DefaultValue);
+                            rtn = (string)OurKey.GetValue(field, defaultValue);
                             OurKey.Close();
                         }
                     }
