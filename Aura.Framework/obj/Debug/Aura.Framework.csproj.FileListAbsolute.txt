@@ -1,0 +1,14 @@
+D:\Users\Terry\Repositories\Aura\Aura.Framework\bin\Debug\Aura.Framework.dll
+D:\Users\Terry\Repositories\Aura\Aura.Framework\bin\Debug\Aura.Framework.pdb
+D:\Users\Terry\Repositories\Aura\Aura.Framework\obj\Debug\Aura.Framework.csprojResolveAssemblyReference.cache
+D:\Users\Terry\Repositories\Aura\Aura.Framework\obj\Debug\Aura.Framework.dll
+D:\Users\Terry\Repositories\Aura\Aura.Framework\obj\Debug\Aura.Framework.pdb
+D:\Users\Terry\Repositories\Aura.Framework\bin\Debug\Aura.Framework.dll
+D:\Users\Terry\Repositories\Aura.Framework\bin\Debug\Aura.Framework.pdb
+D:\Users\Terry\Repositories\Aura.Framework\obj\Debug\Aura.Framework.dll
+D:\Users\Terry\Repositories\Aura.Framework\obj\Debug\Aura.Framework.pdb
+D:\Users\Terry\Repositories\Aura.Framework\Aura.Framework\bin\Debug\Aura.Framework.dll
+D:\Users\Terry\Repositories\Aura.Framework\Aura.Framework\bin\Debug\Aura.Framework.pdb
+D:\Users\Terry\Repositories\Aura.Framework\Aura.Framework\obj\Debug\Aura.Framework.csprojResolveAssemblyReference.cache
+D:\Users\Terry\Repositories\Aura.Framework\Aura.Framework\obj\Debug\Aura.Framework.dll
+D:\Users\Terry\Repositories\Aura.Framework\Aura.Framework\obj\Debug\Aura.Framework.pdb

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E23E01DA-043D-4249-91A2-040B843F789D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aura.Framework.Configurations</RootNamespace>
+    <AssemblyName>Aura.Framework.Configurations</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\ConfigurationExcludeAttribute.cs" />
+    <Compile Include="Configuration.cs" />
+    <Compile Include="Converters\TypeConverter.cs" />
+    <Compile Include="Converters\TypeConverters\BoolStringConverter.cs" />
+    <Compile Include="Converters\TypeConverters\ByteStringConverter.cs" />
+    <Compile Include="Converters\TypeConverters\CharStringConverter.cs" />
+    <Compile Include="Converters\TypeConverters\DateTimeStringConverter.cs" />
+    <Compile Include="Converters\TypeConverters\DecimalStringConverter.cs" />
+    <Compile Include="Converters\TypeConverters\DoubleStringConverter.cs" />
+    <Compile Include="Converters\TypeConverters\EnumStringConverter.cs" />
+    <Compile Include="Converters\TypeConverters\Int16StringConverter.cs" />
+    <Compile Include="Converters\TypeConverters\Int32StringConverter.cs" />
+    <Compile Include="Converters\TypeConverters\Int64StringConverter.cs" />
+    <Compile Include="Converters\TypeConverters\ObjectStringConverter.cs" />
+    <Compile Include="Converters\TypeConverters\SByteStringConverter.cs" />
+    <Compile Include="Converters\TypeConverters\SingleStringConverter.cs" />
+    <Compile Include="Converters\TypeConverters\StringStringConverter.cs" />
+    <Compile Include="Converters\TypeConverters\UInt16StringConverter.cs" />
+    <Compile Include="Converters\TypeConverters\UInt32StringConverter.cs" />
+    <Compile Include="Converters\TypeConverters\UInt64StringConverter.cs" />
+    <Compile Include="Exceptions\ConfigurationException.cs" />
+    <Compile Include="Exceptions\ParseException.cs" />
+    <Compile Include="Interfaces\IConverter.cs" />
+    <Compile Include="IO\ConfigurationElement.cs" />
+    <Compile Include="IO\ConfigurationReader.cs" />
+    <Compile Include="IO\ConfigurationWriter.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\Section.cs" />
+    <Compile Include="Models\Setting.cs" />
+    <Compile Include="Models\SettingArrayEnumerator.cs" />
+    <Compile Include="Overrides\BinaryWriter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

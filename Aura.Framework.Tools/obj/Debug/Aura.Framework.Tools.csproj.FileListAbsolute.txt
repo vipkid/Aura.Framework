@@ -1,0 +1,5 @@
+D:\Users\Terry\Repositories\Aura.Framework\Aura.Framework.Tools\bin\Debug\Aura.Framework.Tools.dll
+D:\Users\Terry\Repositories\Aura.Framework\Aura.Framework.Tools\bin\Debug\Aura.Framework.Tools.pdb
+D:\Users\Terry\Repositories\Aura.Framework\Aura.Framework.Tools\obj\Debug\Aura.Framework.Tools.csprojResolveAssemblyReference.cache
+D:\Users\Terry\Repositories\Aura.Framework\Aura.Framework.Tools\obj\Debug\Aura.Framework.Tools.dll
+D:\Users\Terry\Repositories\Aura.Framework\Aura.Framework.Tools\obj\Debug\Aura.Framework.Tools.pdb
