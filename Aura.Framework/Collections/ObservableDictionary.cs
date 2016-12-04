@@ -115,7 +115,7 @@ namespace Aura.Framework.Collections
                 base.Add(key, value);
                 OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Add, item, Keys.ToList().IndexOf(key)));
                 OnPropertyChanged(new PropertyChangedEventArgs(nameof(Count)));
-            } 
+            }
         }
 
         /// <summary>

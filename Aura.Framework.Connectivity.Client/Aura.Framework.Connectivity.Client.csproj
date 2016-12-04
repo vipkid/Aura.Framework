@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F10B336E-5740-42FA-B3FE-62B1C46EA676}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aura.Framework.Connectivity.Client</RootNamespace>
+    <AssemblyName>Aura.Framework.Connectivity.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Chatrooms\ChatMessage.cs" />
+    <Compile Include="Chatrooms\Chatroom.cs" />
+    <Compile Include="Chatrooms\ChatroomManager.cs" />
+    <Compile Include="Chatrooms\ChatroomUser.cs" />
+    <Compile Include="Chatrooms\Voice\VoiceMessage.cs" />
+    <Compile Include="ClientManager.cs" />
+    <Compile Include="Connection\ConnectionCore.cs" />
+    <Compile Include="Connection\ConnectionData.cs" />
+    <Compile Include="Connection\ConnectionStatus.cs" />
+    <Compile Include="Connection\Packets\Handlers\Incoming\BroadcastChatMessage.cs" />
+    <Compile Include="Connection\Packets\Handlers\Incoming\ChatMessage.cs" />
+    <Compile Include="Connection\Packets\Handlers\Incoming\CreatePrivateRoom.cs" />
+    <Compile Include="Connection\Packets\Handlers\Incoming\InitializeChatrooms.cs" />
+    <Compile Include="Connection\Packets\Handlers\Incoming\InitializeConnection.cs" />
+    <Compile Include="Connection\Packets\Handlers\Incoming\JoinChatroom.cs" />
+    <Compile Include="Connection\Packets\Handlers\Incoming\KeepAlivePacket.cs" />
+    <Compile Include="Connection\Packets\Handlers\Incoming\RemovePrivateRoom.cs" />
+    <Compile Include="Connection\Packets\Handlers\Incoming\VoiceMessage.cs" />
+    <Compile Include="Connection\Packets\Handlers\Outgoing\ChatMessageComposer.cs" />
+    <Compile Include="Connection\Packets\Handlers\Outgoing\ChatroomLeaveComposer.cs" />
+    <Compile Include="Connection\Packets\Handlers\Outgoing\ConnectionDataComposer.cs" />
+    <Compile Include="Connection\Packets\Handlers\Outgoing\CreateRoomComposer.cs" />
+    <Compile Include="Connection\Packets\Handlers\Outgoing\InitializeConnectionComposer.cs" />
+    <Compile Include="Connection\Packets\Handlers\Outgoing\JoinChatroomComposer.cs" />
+    <Compile Include="Connection\Packets\Handlers\Outgoing\JoinQueueComposer.cs" />
+    <Compile Include="Connection\Packets\Handlers\Outgoing\KeepAlivePacketComposer.cs" />
+    <Compile Include="Connection\Packets\Handlers\Outgoing\VoiceMessageComposer.cs" />
+    <Compile Include="Connection\Packets\IPacketHandler.cs" />
+    <Compile Include="Connection\Packets\PacketManager.cs" />
+    <Compile Include="Enumerators\ChatMessageType.cs" />
+    <Compile Include="Events\DisconnectChatroomEventArgs.cs" />
+    <Compile Include="Events\JoinedChatroomEventArgs.cs" />
+    <Compile Include="Events\MessageReceivedEventArgs.cs" />
+    <Compile Include="Events\VoiceReceivedEventArgs.cs" />
+    <Compile Include="Models\DataPackage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aura.Framework.Connectivity\Aura.Framework.Connectivity.csproj">
+      <Project>{BD227228-9835-4C42-81AF-84B1C848C00B}</Project>
+      <Name>Aura.Framework.Connectivity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

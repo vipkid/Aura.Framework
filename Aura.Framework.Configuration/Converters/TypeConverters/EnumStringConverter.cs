@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aura.Framework.Configurations.Converters.TypeConverters
 {
@@ -23,7 +21,7 @@ namespace Aura.Framework.Configurations.Converters.TypeConverters
         /// Converts a <see cref="string"/> into a type.
         /// </summary>
         public override object ConvertFromString(string value, Type hint)
-        { 
+        {
             int indexOfLastDot = value.LastIndexOf('.');
 
             if (indexOfLastDot >= 0)

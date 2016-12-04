@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{85FD5286-0F8D-4255-9023-8F63ACEF5EFC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aura.Framework.Connectivity.Server</RootNamespace>
+    <AssemblyName>Aura.Framework.Connectivity</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\Aura\Aura.Server\bin\Debug\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\Aura\Aura.Server\bin\Debug\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Chatrooms\Chatroom.cs" />
+    <Compile Include="Chatrooms\ChatroomManager.cs" />
+    <Compile Include="Chatrooms\PrivateRoomManager.cs" />
+    <Compile Include="Chatrooms\SpecialQueue.cs" />
+    <Compile Include="Connection\ConnectionController.cs" />
+    <Compile Include="Connection\ConnectionCore.cs" />
+    <Compile Include="Connection\ConnectionData.cs" />
+    <Compile Include="Connection\Packets\Handlers\Incoming\ChatMessage.cs" />
+    <Compile Include="Connection\Packets\Handlers\Incoming\ChatroomLeave.cs" />
+    <Compile Include="Connection\Packets\Handlers\Incoming\ConnectionDataPacket.cs" />
+    <Compile Include="Connection\Packets\Handlers\Incoming\CreateRoom.cs" />
+    <Compile Include="Connection\Packets\Handlers\Incoming\InitializeConnection.cs" />
+    <Compile Include="Connection\Packets\Handlers\Incoming\JoinChatroom.cs" />
+    <Compile Include="Connection\Packets\Handlers\Incoming\JoinQueue.cs" />
+    <Compile Include="Connection\Packets\Handlers\Incoming\KeepAlivePacket.cs" />
+    <Compile Include="Connection\Packets\Handlers\Incoming\VoiceMessage.cs" />
+    <Compile Include="Connection\Packets\Handlers\Outgoing\BroadcastMessageComposer.cs" />
+    <Compile Include="Connection\Packets\Handlers\Outgoing\ChatMessageComposer.cs" />
+    <Compile Include="Connection\Packets\Handlers\Outgoing\CreatePrivateRoomComposer.cs" />
+    <Compile Include="Connection\Packets\Handlers\Outgoing\InitializeChatroomsComposer.cs" />
+    <Compile Include="Connection\Packets\Handlers\Outgoing\InitializeConnectionComposer.cs" />
+    <Compile Include="Connection\Packets\Handlers\Outgoing\JoinChatroomComposer.cs" />
+    <Compile Include="Connection\Packets\Handlers\Outgoing\KeepAlivePacketComposer.cs" />
+    <Compile Include="Connection\Packets\Handlers\Outgoing\RemovePrivateRoomComposer.cs" />
+    <Compile Include="Connection\Packets\Handlers\Outgoing\VoiceMessageComposer.cs" />
+    <Compile Include="Connection\Packets\IPacketHandler.cs" />
+    <Compile Include="Connection\Packets\PacketManager.cs" />
+    <Compile Include="DatabaseEngine\AuraContext.cs" />
+    <Compile Include="DatabaseEngine\Enumerators\Frequently.cs" />
+    <Compile Include="DatabaseEngine\Enumerators\Gender.cs" />
+    <Compile Include="DatabaseEngine\Enumerators\Phone.cs" />
+    <Compile Include="DatabaseEngine\Enumerators\Rank.cs" />
+    <Compile Include="DatabaseEngine\Enumerators\Role.cs" />
+    <Compile Include="DatabaseEngine\Enumerators\States.cs" />
+    <Compile Include="DatabaseEngine\Enumerators\Status.cs" />
+    <Compile Include="DatabaseEngine\Managers\ClientManager.cs" />
+    <Compile Include="DatabaseEngine\Managers\DatabaseManager.cs" />
+    <Compile Include="DatabaseEngine\Models\Clients\Client.cs" />
+    <Compile Include="DatabaseEngine\Models\Clients\ClientBan.cs" />
+    <Compile Include="DatabaseEngine\Models\Data\Achievement.cs" />
+    <Compile Include="DatabaseEngine\Models\Data\EmailAddress.cs" />
+    <Compile Include="DatabaseEngine\Models\Data\Hobby.cs" />
+    <Compile Include="DatabaseEngine\Models\Data\PhoneNumber.cs" />
+    <Compile Include="Models\DataPackage.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerLogger.cs" />
+    <Compile Include="ServerManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Aura.Framework.Connectivity\Aura.Framework.Connectivity.csproj">
+      <Project>{BD227228-9835-4C42-81AF-84B1C848C00B}</Project>
+      <Name>Aura.Framework.Connectivity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
