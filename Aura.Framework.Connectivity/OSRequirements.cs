@@ -54,7 +54,7 @@ namespace Aura.Framework.Connectivity
             catch (InvalidOperationException) { }
             return false;
         }
-    }
 
-    #endregion Public Static Methods
+        #endregion Public Static Methods
+    }
 }
