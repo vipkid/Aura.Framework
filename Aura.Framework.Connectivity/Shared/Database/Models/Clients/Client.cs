@@ -1,11 +1,11 @@
-﻿using Aura.Framework.Connectivity.Server.DatabaseEngine.Enumerators;
-using Aura.Framework.Connectivity.Server.DatabaseEngine.Models.Data;
+﻿using Aura.Framework.Connectivity.Shared.Database.Enumerators;
+using Aura.Framework.Connectivity.Shared.Database.Models.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Aura.Framework.Connectivity.Server.DatabaseEngine.Models.Clients
+namespace Aura.Framework.Connectivity.Shared.Database.Models.Clients
 {
     /// <summary>
     /// Represents a client implemented with the client interface.

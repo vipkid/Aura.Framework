@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aura.Framework.Connectivity
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aura.Framework.Audio", "Aura.Framework.Audio\Aura.Framework.Audio.csproj", "{1BFF3141-5C0B-43EA-A83C-05AAE37E931C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aura.Framework.Globalisation", "Aura.Framework.Globalisation\Aura.Framework.Globalisation.csproj", "{71D05033-83FC-4F64-AA84-7BA12DFD7588}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aura.Framework.UI", "Aura.Framework.UI\Aura.Framework.UI.csproj", "{11143B48-F61C-426D-AFE9-2EA8C25F7A39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,14 @@ Global
 		{1BFF3141-5C0B-43EA-A83C-05AAE37E931C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BFF3141-5C0B-43EA-A83C-05AAE37E931C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BFF3141-5C0B-43EA-A83C-05AAE37E931C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71D05033-83FC-4F64-AA84-7BA12DFD7588}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71D05033-83FC-4F64-AA84-7BA12DFD7588}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71D05033-83FC-4F64-AA84-7BA12DFD7588}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71D05033-83FC-4F64-AA84-7BA12DFD7588}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11143B48-F61C-426D-AFE9-2EA8C25F7A39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11143B48-F61C-426D-AFE9-2EA8C25F7A39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11143B48-F61C-426D-AFE9-2EA8C25F7A39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11143B48-F61C-426D-AFE9-2EA8C25F7A39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

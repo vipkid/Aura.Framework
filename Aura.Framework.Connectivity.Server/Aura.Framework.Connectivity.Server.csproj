@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Aura.Framework.Connectivity.Server</RootNamespace>
-    <AssemblyName>Aura.Framework.Connectivity</AssemblyName>
+    <AssemblyName>Aura.Framework.Connectivity.Server</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -76,21 +76,8 @@
     <Compile Include="Connection\Packets\IPacketHandler.cs" />
     <Compile Include="Connection\Packets\PacketManager.cs" />
     <Compile Include="DatabaseEngine\AuraContext.cs" />
-    <Compile Include="DatabaseEngine\Enumerators\Frequently.cs" />
-    <Compile Include="DatabaseEngine\Enumerators\Gender.cs" />
-    <Compile Include="DatabaseEngine\Enumerators\Phone.cs" />
-    <Compile Include="DatabaseEngine\Enumerators\Rank.cs" />
-    <Compile Include="DatabaseEngine\Enumerators\Role.cs" />
-    <Compile Include="DatabaseEngine\Enumerators\States.cs" />
-    <Compile Include="DatabaseEngine\Enumerators\Status.cs" />
     <Compile Include="DatabaseEngine\Managers\ClientManager.cs" />
     <Compile Include="DatabaseEngine\Managers\DatabaseManager.cs" />
-    <Compile Include="DatabaseEngine\Models\Clients\Client.cs" />
-    <Compile Include="DatabaseEngine\Models\Clients\ClientBan.cs" />
-    <Compile Include="DatabaseEngine\Models\Data\Achievement.cs" />
-    <Compile Include="DatabaseEngine\Models\Data\EmailAddress.cs" />
-    <Compile Include="DatabaseEngine\Models\Data\Hobby.cs" />
-    <Compile Include="DatabaseEngine\Models\Data\PhoneNumber.cs" />
     <Compile Include="Models\DataPackage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServerLogger.cs" />

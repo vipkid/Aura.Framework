@@ -1,4 +1,4 @@
-﻿using Aura.Framework.Connectivity.Server.DatabaseEngine.Models.Clients;
+﻿using Aura.Framework.Connectivity.Shared.Database.Models.Clients;
 using System.Data.Entity;
 
 namespace Aura.Framework.Connectivity.Server.DatabaseEngine

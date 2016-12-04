@@ -1,4 +1,4 @@
-﻿namespace Aura.Framework.Enumerators
+﻿namespace Aura.Framework.Connectivity.Shared.Database.Enumerators
 {
     /// <summary>
     /// Represents an enumerator to specify the ranking type of a user.

@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{BD227228-9835-4C42-81AF-84B1C848C00B}</ProjectGuid>
+    <ProjectGuid>{11143B48-F61C-426D-AFE9-2EA8C25F7A39}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Aura.Framework.Connectivity</RootNamespace>
-    <AssemblyName>Aura.Framework.Connectivity</AssemblyName>
+    <RootNamespace>Aura.Framework.UI</RootNamespace>
+    <AssemblyName>Aura.Framework.UI</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,30 +31,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OSData.cs" />
-    <Compile Include="OSRequirements.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Shared\Database\Enumerators\Frequently.cs" />
-    <Compile Include="Shared\Database\Enumerators\Gender.cs" />
-    <Compile Include="Shared\Database\Enumerators\Phone.cs" />
-    <Compile Include="Shared\Database\Enumerators\Rank.cs" />
-    <Compile Include="Shared\Database\Enumerators\Role.cs" />
-    <Compile Include="Shared\Database\Enumerators\States.cs" />
-    <Compile Include="Shared\Database\Enumerators\Status.cs" />
-    <Compile Include="Shared\Database\Models\Clients\Client.cs" />
-    <Compile Include="Shared\Database\Models\Clients\ClientBan.cs" />
-    <Compile Include="Shared\Database\Models\Data\Achievement.cs" />
-    <Compile Include="Shared\Database\Models\Data\EmailAddress.cs" />
-    <Compile Include="Shared\Database\Models\Data\Hobby.cs" />
-    <Compile Include="Shared\Database\Models\Data\PhoneNumber.cs" />
-    <Compile Include="Shared\Messages\ClientMessage.cs" />
-    <Compile Include="Shared\Messages\ServerMessage.cs" />
-    <Compile Include="Shared\Packets\PacketsIDHandler.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

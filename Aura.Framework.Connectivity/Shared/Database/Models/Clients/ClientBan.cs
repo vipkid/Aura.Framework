@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Aura.Framework.Connectivity.Server.DatabaseEngine.Models.Clients
+namespace Aura.Framework.Connectivity.Shared.Database.Models.Clients
 {
     /// <summary>
     /// Represents a user ban.

@@ -1,4 +1,4 @@
-﻿namespace Aura.Framework.Enumerators
+﻿namespace Aura.Framework.Audio.Player.Enumerators
 {
     /// <summary>
     /// Represents an enumerator to specify a media key like the play, stop, forward and backward buttons. Used for the keyboard hook.

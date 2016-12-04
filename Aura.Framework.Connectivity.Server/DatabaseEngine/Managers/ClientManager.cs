@@ -1,5 +1,5 @@
-﻿using Aura.Framework.Connectivity.Server.DatabaseEngine.Enumerators;
-using Aura.Framework.Connectivity.Server.DatabaseEngine.Models.Clients;
+﻿using Aura.Framework.Connectivity.Shared.Database.Enumerators;
+using Aura.Framework.Connectivity.Shared.Database.Models.Clients;
 using System;
 using System.Data.Entity;
 using System.Linq;
@@ -89,7 +89,7 @@ namespace Aura.Framework.Connectivity.Server.DatabaseEngine.Managers
                     {
                         try
                         {
-                            database.Clients.Add(new Models.Clients.Client()
+                            database.Clients.Add(new Client()
                             {
                                 FullName = username,
                                 Password = password

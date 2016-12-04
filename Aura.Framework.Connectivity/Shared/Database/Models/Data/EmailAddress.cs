@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
-namespace Aura.Framework.Connectivity.Server.DatabaseEngine.Models.Data
+namespace Aura.Framework.Connectivity.Shared.Database.Models.Data
 {
     /// <summary>
     /// Represents an email address.

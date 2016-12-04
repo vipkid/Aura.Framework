@@ -1,5 +1,5 @@
-﻿using Aura.Framework.Connectivity.Server.DatabaseEngine.Models.Clients;
-using Aura.Framework.Connectivity.Server.Models;
+﻿using Aura.Framework.Connectivity.Server.Models;
+using Aura.Framework.Connectivity.Shared.Database.Models.Clients;
 using System;
 using System.Collections.Generic;
 using System.Net;

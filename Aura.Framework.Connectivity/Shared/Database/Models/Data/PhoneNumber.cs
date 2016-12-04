@@ -1,7 +1,7 @@
-﻿using Aura.Framework.Connectivity.Server.DatabaseEngine.Enumerators;
+﻿using Aura.Framework.Connectivity.Shared.Database.Enumerators;
 using System.ComponentModel.DataAnnotations;
 
-namespace Aura.Framework.Connectivity.Server.DatabaseEngine.Models.Data
+namespace Aura.Framework.Connectivity.Shared.Database.Models.Data
 {
     /// <summary>
     /// Represents a phone number.

@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Aura.Framework.Connectivity")]
+[assembly: AssemblyTitle("Aura.Framework.Globalisation")]
 [assembly: AssemblyDescription("A framework that is used by Aura.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Aura")]
@@ -11,4 +11,4 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 [assembly: AssemblyVersion("1.0.*")]
-[assembly: Guid("bd227228-9835-4c42-81af-84b1c848c00b")]
+[assembly: Guid("71d05033-83fc-4f64-aa84-7ba12dfd7588")] 

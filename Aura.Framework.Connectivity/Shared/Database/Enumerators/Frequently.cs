@@ -1,4 +1,4 @@
-﻿namespace Aura.Framework.Enumerators
+﻿namespace Aura.Framework.Connectivity.Shared.Database.Enumerators
 {
     /// <summary>
     /// Specifies how often the 'events' are done.

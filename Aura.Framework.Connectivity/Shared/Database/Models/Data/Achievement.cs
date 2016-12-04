@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Aura.Framework.Connectivity.Server.DatabaseEngine.Models.Data
+namespace Aura.Framework.Connectivity.Shared.Database.Models.Data
 {
     /// <summary>
     /// Represents an achievement.

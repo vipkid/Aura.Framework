@@ -1,4 +1,4 @@
-﻿namespace Aura.Framework.Connectivity.Server.DatabaseEngine.Enumerators
+﻿namespace Aura.Framework.Connectivity.Shared.Database.Enumerators
 {
     /// <summary>
     /// Represents an enumerator to specify a gender.

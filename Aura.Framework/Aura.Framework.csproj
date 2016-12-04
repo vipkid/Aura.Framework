@@ -45,18 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Collections\ObservableDictionary.cs" />
-    <Compile Include="Enumerators\Frequently.cs" />
-    <Compile Include="Enumerators\Gender.cs" />
-    <Compile Include="Enumerators\MediaKeys.cs" />
-    <Compile Include="Enumerators\Phone.cs" />
-    <Compile Include="Enumerators\Rank.cs" />
-    <Compile Include="Enumerators\Role.cs" />
-    <Compile Include="Enumerators\Status.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Globalization\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
