@@ -1,4 +1,0 @@
-D:\Users\Terry\Repositories\Aura.Framework\Aura.Framework.Configuration\bin\Debug\Aura.Framework.Configurations.dll
-D:\Users\Terry\Repositories\Aura.Framework\Aura.Framework.Configuration\bin\Debug\Aura.Framework.Configurations.pdb
-D:\Users\Terry\Repositories\Aura.Framework\Aura.Framework.Configuration\obj\Debug\Aura.Framework.Configurations.dll
-D:\Users\Terry\Repositories\Aura.Framework\Aura.Framework.Configuration\obj\Debug\Aura.Framework.Configurations.pdb
